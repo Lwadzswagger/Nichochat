@@ -1,0 +1,85 @@
+.ta-left{
+  text-align: left;
+}
+.ta-right{
+  text-align: right;
+}
+.ta-center{
+  text-align: center;
+}
+.font-bold{
+  font-weight: bold;
+}
+.margin-top-20{
+  margin-top: 20px;
+}
+.margin-top-40{
+  margin-top: 40px;
+}
+.margin-top-50{
+  margin-top: 50px;
+}
+.margin-top-1000{
+  margin-top: 100px;
+}.margin-top-120{
+  margin-top: 120px;
+}.padding-bottom-180{
+  padding-bottom: 180px;
+}
+.margin-left-20{
+  margin-left: 20px;
+}
+
+.margin-left-40{
+  margin-left: 40px;
+}
+
+.margin-left-50{
+  margin-left: 50px;
+}
+.margin-left-100{
+  margin-left: 100px;
+}
+
+.margin-left-120{
+  margin-left: 120px;
+}
+
+
+.grind{
+  width: 100%;
+  height: 250px;
+  background-color: #2e3135 ;
+}
+
+.padding-left-20{
+  padding-left: 20px;
+}
+.padding-left-40{
+  padding-left: 40px;
+}
+.padding-left-50{
+  padding-left: 50px;
+}
+.padding-top-75{
+  padding-top: 75px;
+}
+.padding-left-100{
+  padding-left: 20px;
+}
+.padding-left-120{
+  padding-left: 20px;
+}
+/* [
+   {content: 'hello world', username: 'Alfred Ntombela', timeStamp: '12:00'},
+   {content: 'Im nicole ready for work', username: 'NIcole Hopper', timeStamp: '12:10'},
+   {content: 'Fear of global warming is tidiouse', username: 'Simon Jersey', timeStamp: '12:45'},
+   {content: 'Self inflicting behavior in physch hospital has elevated', username: 'Lindani Bhekwa', timeStamp: '12:58'},
+   {content: 'Nor the teachers new what was coming', username: 'Jeff houston', timeStamp: '14:01'},
+   {content: 'Breakfast in bed the lovers style', username: 'Denial Gonzola', timeStamp: '14:05'},
+   {content: 'Wooden carved furniture is more valueable?', username: 'Will Jackson', timeStamp: '14:13'},
+   {content: 'Six died in a major aircraft crash ', username: 'Johny Walker', timeStamp: '14:30'},
+   {content: 'Mitosis stopped on a 12 year old', username: 'Halsey ', timeStamp: '17:25'},
+   {content: 'Whats Apple without Steve jobs?', username: 'Stephen Soda', timeStamp: '20:00'},
+   {content: 'Demi levado performs in South Africa', username: 'Jane Smith', timeStamp: '01:00'},
+ ]; */

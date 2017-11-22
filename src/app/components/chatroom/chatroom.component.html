@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row columns">
+    <div id="iface">
+           <div class="spinner">
+              <div class="dot1"></div>
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+            </div>
+
+     <div class="input-group">
+        <i class="input-group-addon">
+          <span class="fa fa-plus"></span>
+        </i>
+        <!-- <input type="text" id="message" name="chat" placeholder="Your chat message here..." (keyup.enter)="send(message)" -->
+          class="form-control" #message>
+</div>
+
+      <div class="details-container" *ngFor="let chat of  feed | async   let i = index">
+
+        <div>
+          <strong>
+            <h1>{{chat}}</h1>
+          </strong>
+
+          <div *ngIf="isEditing; then showEdit else showMsg">
+            <!-- (editId == i) && -->
+            <ng-template #showMsg>
+              <p>{{chat.body}}</p>
+            </ng-template>
+            <ng-template #showEdit>
+              <!-- <input type="text" value="{{chat.body}}" (keyup.enter)="updateChatroom(chat.body) "> -->
+            </ng-template>
+          </div>
+          <p> By:
+            <a href="#" class="ico pop">{{chat.id}}</a>
+          </p>
+          <div class="row">
+            <a href="#" class="ico pop">
+              <span class="glyphicon glyphicon-thumbs-up fa-2x"></span>like
+            </a>
+
+            <a href="#" class="ico pop">
+              <!-- <span class="fa fa-pencil-square-o fa-2x" aria-hidden="true" (click)="editi ">edit</span> -->
+            </a>
+
+            <a href=""  class="ico">
+              <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>Opinionate</a>
+
+              <!-- <button type="button" (click)="deleteChatroom(chat)"> -->
+                <!-- <span class="glyphicon glyphicon-trash"></span>Trash </button> -->
+              <!-- <button type="button" (click)="updateChatroom(chat)">update </button></div> -->
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div
+infinitScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="1000"
+(scrolled)="onScroll()">
+
+</div> -->
