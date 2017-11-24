@@ -22,7 +22,7 @@ const routes: Routes = [
   {
      path: 'chats',
      component: ChatsComponent,
-      canActivate: [AuthGuard],
+      // canActivate: [AuthGuard],
 
     children: [
       {

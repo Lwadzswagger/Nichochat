@@ -10,23 +10,30 @@ import { log } from 'util';
 
 @Injectable()
 export class AuthService {
-  private user: Observable<firebase.User>;
-  private userDetails: firebase.User = null;
+  private authState: Observable<firebase.User>;
+  private currentUser: firebase.User = null;
+
 
   constructor(public afAuth: AngularFireAuth, private router: Router) {
-    this.user = afAuth.authState;
-    this.user.subscribe(user => {
+    this.authState = afAuth.authState;
+    this.authState.subscribe(user => {
       if (user) {
-        this.userDetails = user;
-        console.log(this.userDetails);
+        this.currentUser = user;
+        console.log(this.currentUser);
       } else {
-        this.userDetails = null;
+        this.currentUser = null;
       }
     });
   }
 
+getauthstate() {
+return this.authState;
+}
+
   loginWithGoogle() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.afAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider());
+this.router.navigate(['chats']);
   }
 
   loginWithFacebook() {
@@ -38,16 +45,20 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return tokenNotExpired();
+if (tokenNotExpired() && !this.currentUser === null ) {
+ return true ;
+} else {
+  return  false;
+}
   }
 
 
   logout() {
+     this.afAuth.auth.signOut();
      localStorage.removeItem('token');
-    this.afAuth.auth.signOut().then(res => this.router.navigate(['/login']));
+     this.router.navigate(['/login']);
       }
 
-// last night's code
 // usefull when determinig user roles
       getcurrentUser() {
           // tslint:disable-next-line:prefer-const

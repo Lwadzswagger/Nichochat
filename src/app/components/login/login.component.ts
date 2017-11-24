@@ -33,8 +33,8 @@ export class LoginComponent  {
 
 
     // tslint:disable-next-line:prefer-const
-    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
-    this.router.navigate([returnUrl || '/' ]);
+    // let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+    // this.router.navigate([returnUrl || '/' ]);
 
 
     signInWithGoogle() {
