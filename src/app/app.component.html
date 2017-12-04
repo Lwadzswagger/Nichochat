@@ -11,6 +11,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#" *ngIf="authService.isLoggedIn()">{{authService.getcurrentUser().displayName}}} </a>
+<p>{{authService.getcurrentUser().displayName}}}  </p>
     </div>
 
 
@@ -19,8 +20,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-item navbar-right">
-        <li class="nav-item" *ngIf="authService.isLoggedIn()">
-          <p class="navbar-link "> Sign out</p>
+        <li class="nav-item" *ngIf="!authService.isLoggedIn()">
+          <p class="navbar-link navbarLinks "> Sign out</p>
         </li>
         <li class="nav-item" *ngIf="authService.isLoggedIn()">
           <p class="navbar-link " routerLink="chats">
@@ -30,13 +31,13 @@
           <p class="navbar-link" routerLink="profile">
             <i class="fa fa-user-md" aria-hidden="true"></i> Profile</p>
         </li>
-        <li class="nav-item">
-          <p class="navbar-link" routerLink="signup">
-            <i class="fa fa-user-plus " aria-hidden="true"></i> Sign up</p>
+        <li class="nav-item ">
+          <p class="navbar-link navbarLinks" routerLink="signup">
+            <i class="fa fa-user-plus greenie " aria-hidden="true"></i> Sign up </p>
         </li>
-        <li *ngIf="!authService.isLoggedIn()">
-          <p class="navbar-link" routerLink="login">
-            <i class="fa fa-sign-in" aria-hidden="true"></i> Login</p>
+        <li  class="nav-item " *ngIf="!authService.isLoggedIn()">
+          <p class="navbar-link navbarLinks" routerLink="login">
+            <i class="fa fa-sign-in greenie" aria-hidden="true"></i> Login </p>
         </li>
 
 
