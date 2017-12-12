@@ -25,6 +25,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import {AngularFireAuthModule, AngularFireAuth} from 'angularfire2/auth';
 import { AuthGuard } from './services/auth-guard.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 // import {mock}
 export const	firbaseConfig = {
   	// tslint:disable-next-line:indent
@@ -49,6 +50,7 @@ export const	firbaseConfig = {
     AccessDeniedComponent,
     HomeComponent,
     ChatsComponent,
+    NavbarComponent,
     // ScrollableDirective
     // MessComponent,
     // MESSAGES

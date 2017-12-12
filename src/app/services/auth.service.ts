@@ -4,29 +4,23 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { log } from 'util';
-
 // import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 export class AuthService {
-  private user: Observable<firebase.User>;
+  public user$: Observable<firebase.User>;
   private userDetails: firebase.User = null;
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) {
-    this.user = afAuth.authState;
-    this.user.subscribe(user => {
-      if (user) {
-        this.userDetails = user;
-        console.log(this.userDetails);
-      } else {
-        this.userDetails = null;
-      }
-    });
+  constructor(public afAuth: AngularFireAuth, public router: Router) {
+    this.user$ = afAuth.authState;
+    // this.user$.subscribe(user =>{console.log(user);
+    //     });
   }
+
 
   loginWithGoogle() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+     this.router.navigate(['/chats']);
   }
 
   loginWithFacebook() {
@@ -38,23 +32,25 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return tokenNotExpired();
+const visitor = firebase.auth().currentUser;
+console.log(firebase.auth().currentUser);
+if (visitor === null) {
+return true;
+} else {
+  return false;
+}
+
   }
 
 
   logout() {
-     localStorage.removeItem('token');
+    //  localStorage.removeItem('token');
     this.afAuth.auth.signOut().then(res => this.router.navigate(['/login']));
       }
 
-// last night's code
-// usefull when determinig user roles
+// what type of user for roles purposes
       getcurrentUser() {
-          // tslint:disable-next-line:prefer-const
-          let token = localStorage.getItem('token');
-        // tslint:disable-next-line:curly
-        if (!token) return null;
-        return new JwtHelper().decodeToken(token);
+        return firebase.auth().currentUser;
       }
 
 }
