@@ -2,16 +2,15 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import {JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { Router } from '@angular/router';
+import { Router , ActivatedRoute} from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-// import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 export class AuthService {
   public user$: Observable<firebase.User>;
   private userDetails: firebase.User = null;
 
-  constructor(public afAuth: AngularFireAuth, public router: Router) {
+  constructor(public afAuth: AngularFireAuth, public router: Router, private route: ActivatedRoute) {
     this.user$ = afAuth.authState;
     // this.user$.subscribe(user =>{console.log(user);
     //     });
@@ -19,8 +18,10 @@ export class AuthService {
 
 
   loginWithGoogle() {
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl ') || '/';
+      localStorage.setItem('returnUrl', returnUrl);
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-     this.router.navigate(['/chats']);
+    //  this.router.navigate(['/chats']);
   }
 
   loginWithFacebook() {
@@ -56,17 +57,3 @@ return true;
 }
 
 
-
- // if (this.user == null) {
-    //   return false;
-    // } else {
-    //   return true;
-    // }
-
-  // logout() {
-  // return this.afAuth.auth.signOut();
-  // }  // **logout() {
-  //     this._firebaseAuth.auth.signOut()
-  //     .then((res) => this.router.navigate(['/']));
-  //   }
-  // }
