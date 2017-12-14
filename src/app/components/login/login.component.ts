@@ -9,11 +9,9 @@ import { AuthService, } from '../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
-  invalidLogin: boolean;
-
-  // constructor(private router: Router, private authserve: AuthService) { }
-
-
+    // tslint:disable-next-line:prefer-const
+    returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+  // invalidLogin: boolean;
 
 
     constructor(
@@ -32,13 +30,12 @@ export class LoginComponent  {
     // }
 
 
-    // tslint:disable-next-line:prefer-const
-    let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
-    this.router.navigate([returnUrl || '/' ]);
 
 
     signInWithGoogle() {
       this.authService.loginWithGoogle();
+      this.router.navigate([this.returnUrl || '/' ]);
+
       }
      signInWithFacebook() {
         this.authService.loginWithGoogle();

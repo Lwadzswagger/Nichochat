@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { CanActivate } from '@angular/router/src/interfaces';
 
 
 const routes: Routes = [
@@ -18,7 +19,11 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent  },
   { path: 'signup', component: SignupComponent },
-  { path: 'home', component: HomeComponent  },
+  {
+    path: 'home',
+    component: HomeComponent,
+     canActivate: [AuthGuard]
+    },
   {
      path: 'chats',
      component: ChatsComponent,

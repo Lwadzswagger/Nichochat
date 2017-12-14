@@ -18,7 +18,14 @@ export class AppComponent {
 constructor(
    public router: Router,
    public authService: AuthService,
-  ) {}
+  ) {
+authService.user$.subscribe(user => {
+if (user) {
+ const  returnUrl = localStorage.getItem('returnUrl');
+router.navigateByUrl(returnUrl);
+}}
+);
+  }
 
 
 
