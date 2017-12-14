@@ -26,7 +26,12 @@ import { ChatsComponent } from './components/chats/chats.component';
 import {AngularFireAuthModule, AngularFireAuth} from 'angularfire2/auth';
 import { AuthGuard } from './services/auth-guard.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
-// import {mock}
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { InputFormComponent } from './components/input-form/input-form.component';
+import {MatCardModule} from '@angular/material/card';
+// import {MatButtonModule} from '@angular/material/button';
+// import { MaterialModule } from './material.module';
+// import {MaterialModule}
 export const	firbaseConfig = {
   	// tslint:disable-next-line:indent
   	apiKey: 'AIzaSyDNFUTx--HVAKN_SCGQcJmTj52pJDT48RE',
@@ -51,6 +56,8 @@ export const	firbaseConfig = {
     HomeComponent,
     ChatsComponent,
     NavbarComponent,
+    SidenavComponent,
+    InputFormComponent,
     // ScrollableDirective
     // MessComponent,
     // MESSAGES
@@ -60,8 +67,10 @@ export const	firbaseConfig = {
       BrowserModule,
       AngularFontAwesomeModule,
        HttpModule,
+      //  MaterialModule,
       AngularFireModule.initializeApp(firbaseConfig),
-
+      MatCardModule,
+      // MatButtonModule,
       AppRoutingModule
   ],
   providers: [

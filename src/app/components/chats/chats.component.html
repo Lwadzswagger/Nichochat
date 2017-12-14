@@ -1,46 +1,11 @@
-<div class="container-fluid">
-  <div class="row" style="background-color:#ebf2f2;">
-    <div style="background-color: #00A8B6;" id="appTitle" class="col-md-2 ">
-      <strong>User list </strong>
-      <div class="myFriends" >
-        <ul style="list-style-type: none; color: #fff;">
-          <li *ngFor="let friend of friends" style="color:#fff; ">
-<a href="" class="pop">    {{friend.name}} {{friend.surname}}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- <div class="container"> -->
-    <div class="col-md-6">
-      <ul class="nav nav-tabs nav-len">
-        <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link " [routerLink]="['inbox']">
-            <span class="glyphicon glyphicon-inbox"></span> Inbox
-            <span class="badge badge-primary">10</span>
-          </a>
-        </li>
-        <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link " [routerLink]="['chatroom']">
-            <span class="fa fa-comments"></span>Chat room
-            <span class="label label-success">54</span>
-          </a>
-        </li>
-        <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" [routerLink]="['stage']">
-            <span class="fa fa-eye-slash  "></span> Stage
-            <span type="badge" class="label label-danger">145</span>
-          </a>
-        </li>
-      </ul>
-      <router-outlet>
-      </router-outlet>
-    </div>
-    <!-- </div> -->
-    <div style="background-color: #00A8B6;" id="appTitle" class="col-md-2 ">
-      <strong>Possible user profile list </strong>
-<!-- {{friend.name}}   -->
-    </div>
-
-
+<div class="row">
+  <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2 side-nav">
+    <sidenav></sidenav>
   </div>
+  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+    <app-inbox  class="display"></app-inbox>
+    <input-form></input-form>
+  </div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 input-form">
 </div>

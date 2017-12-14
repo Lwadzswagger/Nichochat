@@ -1,0 +1,23 @@
+.makeWhite{
+background-color:#0b9c62;
+color:#fff;
+font-size:16px;
+list-style-type:none;
+}
+
+.whitie{
+color:#0b9c62;
+}
+
+.itdem{
+background-color:#0b9c62;
+}
+.btn-pil{
+width:100%;
+text-align:left;
+font-size:23px;
+font-weight:5px;
+background-color:#03033d;
+border:none;
+border-bottom:2px solid #31313a;
+}
