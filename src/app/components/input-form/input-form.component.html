@@ -1,5 +1,4 @@
 
-<!-- send(message)(keyup.enter)="" -->
 <mat-card class="input-card">
     <mat-card-content>
 
@@ -7,14 +6,15 @@
   <i class="input-group-addon">
     <span class="fa fa-plus"></span>
   </i>
-  <input type="text" id="message" name="chat" placeholder="write something here..."
+<input  type="text"
+ (keyup.enter)="sendMsg(message)"  id="message" name="chat" placeholder="write something here..."
   class="form-control" #message>
 </div>
     </mat-card-content>
     <mat-card-actions>
       <div class="row input-items">
           <button mat-button class="attachment"> <i class="fa fa-paperclip" aria-hidden="true"></i></button>
-          <button mat-button class="send"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> send</button>
+          <button mat-button class="send" (click)="sendMsg(message)"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> send</button>
 
 </div>
     </mat-card-actions>

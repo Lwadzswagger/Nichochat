@@ -1,0 +1,34 @@
+
+*{
+  transition:.5s;
+ }
+
+ .greenie{
+  color:#0b9c62;
+  background-color:#03033d;
+
+}
+.search-input{
+color:#0b9c62;
+font-size:17px;
+}
+.search-input-outer{
+  border-radius:  2px solid #0b9c62;
+color:#0b9c62
+
+}
+.ico-light{
+color:#0b9c62;
+}
+.drop:hover{
+color:#fff;
+}
+.drop-menu{
+color:#0b9c62;
+background-color:#fff;
+opacity: 0.6;
+}
+
+.ico-dark{
+  color:#03033d
+}

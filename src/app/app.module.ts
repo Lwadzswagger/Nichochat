@@ -29,7 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { InputFormComponent } from './components/input-form/input-form.component';
 import {MatCardModule} from '@angular/material/card';
-// import {MatButtonModule} from '@angular/material/button';
+import {MatButtonModule} from '@angular/material/button';
 // import { MaterialModule } from './material.module';
 // import {MaterialModule}
 export const	firbaseConfig = {

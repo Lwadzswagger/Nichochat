@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from '../../services/chat.service';
 
 @Component({
   selector: 'app-inbox',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inbox.component.css']
 })
 export class InboxComponent implements OnInit {
+  forInbox: boolean;
+  feed: any [];
+   public static isDisplayInbox() {return true;  }
+  constructor(private cservice: ChatService) {
 
-  constructor() { }
+this.cservice.getAll()
+.subscribe(
+  Response => {
+this.feed = Response.json();
+  });
+
+   }
 
   ngOnInit() {
+  this.forInbox = true;
   }
+
+
 
 }

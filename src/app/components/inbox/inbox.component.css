@@ -1,45 +1,72 @@
-.appTitle{
+/* .appTitle{
   font-family: 'Tangerine', cursive;
 font-size:87px;
 text-transform:capitalize;
+} */
+
+
+.inbox-card {
+  /* position: relative; */
+  width: 100%;
+  /* height: 150px; */
+  background-color:#cacad8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-#login-dp{
-  min-width: 250px;
-  padding: 14px 14px 0;
-  overflow:hidden;
-  background-color:rgba(255,255,255,.8);
+
+.group-card{
+ width: 100%;
+ background-color:#cacad8;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-#login-dp .help-block{
-  font-size:12px
+
+
+
+
+
+
+
+
+
+
+/* ============----------------------------------------------------------------------------- */
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
 }
-#login-dp .bottom{
-  background-color:rgba(255,255,255,.8);
-  border-top:1px solid #ddd;
-  clear:both;
-  padding:14px;
+
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
 }
-#login-dp .social-buttons{
-  margin:12px 0
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
 }
-#login-dp .social-buttons a{
-  width: 49%;
+
+
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 100%;
+  /* background: #F5F5F5; */
+  background-color:transparent;
+	overflow-y: scroll;
+	margin-bottom: 25px;
 }
-#login-dp .form-group {
-  margin-bottom: 10px;
+
+.force-overflow
+{
+	min-height: 100%;
+	/* min-height: 450px; */
 }
-.btn-fb{
-  color: #fff;
-  background-color:#3b5998;
-}
-.btn-fb:hover{
-  color: #fff;
-  background-color:#496ebc
-}
-.btn-tw{
-  color: #fff;
-  background-color:#55acee;
-}
-.btn-tw:hover{
-  color: #fff;
-  background-color:#59b5fa;
-}
+
+

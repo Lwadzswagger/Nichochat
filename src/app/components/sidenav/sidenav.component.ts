@@ -18,8 +18,8 @@ export class SidenavComponent implements OnInit {
     {name: 'Sizler', surname: 'Obama'},
     {name: 'Nicole', surname: 'Washington'},
     {name: 'Alysa', surname: 'Dean'},
-    {name: 'Samantha', surname: 'Tucker'},
-    {name: 'Dave', surname: 'Stallone'},
+    // {name: 'Samantha', surname: 'Tucker'},
+    // {name: 'Dave', surname: 'Stallone'},
     // {name: 'Gibson', surname: 'Crimson'},
     // {name: 'Jane', surname: 'Love'},
     // {name: 'Vamp', surname: 'Personal'},
@@ -37,8 +37,43 @@ export class SidenavComponent implements OnInit {
     // {name: 'Nicholas', surname: 'Smith'},
     // {name: 'Nicholas', surname: 'Smith'},
     // {name: 'Nicholas', surname: 'Smith'},
-    {name: 'Nicholas', surname: 'Smith'},
+    // {name: 'Nicholas', surname: 'Smith'},
   ];
+
+
+
+
+
+
+  inbox = [
+    {name: 'Dave', surname: 'Stallone', badge: 3},
+    {name: 'Gibson', surname: 'Crimson', badge: 2},
+    {name: 'Jane', surname: 'Van De Me...', badge: 4},
+    {name: 'Vamp', surname: 'Personal', badge: 32},
+    {name: 'Lourel', surname: 'River', badge: 6},
+    {name: 'Bean', surname: 'Lighthouse', badge: 1},
+    {name: 'Gert', surname: 'Pembertin', badge: 5},
+    {name: 'Richards', surname: 'Mock', badge: 37},
+  ];
+
+  eCop = [
+    {name: 'Nicholas', surname: 'Smith'},
+    {name: 'Nicholas', surname: 'Smith'},
+    {name: 'Nicholas', surname: 'Smith'},
+    {name: 'Nicholas', surname: 'Smith'},
+    {name: 'Nicholas', surname: 'Smith'},
+    {name: 'Nicholas', surname: 'Smith'}
+  ];
+
+  groups = [
+    {name: 'Think Rise'},
+    {name: 'Aliens'},
+    {name: 'CapaCiTi'},
+    {name: 'Lending'},
+    {name: 'AHN'},
+    {name: 'Carrot'}
+  ];
+
  constructor() { }
 
   ngOnInit() {

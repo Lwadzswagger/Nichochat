@@ -25,7 +25,7 @@ isEditing= false;
   // chatrooms: any[];
   feed: AngularFireList<ChatMessage[]>;
   constructor(private chatservice: ChatService) {
-this.chatservice.getMessage();
+// this.chatservice.getMessage();
   }
 
   // ngOnInit(): void {

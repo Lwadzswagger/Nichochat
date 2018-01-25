@@ -8,26 +8,35 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
-export class ChatService {
+export class ChatService  extends DataService {
   user: any;
   chatMessages: AngularFireList<any[]>;
   chatMessage: ChatMessage;
   userName: Observable<string>;
 
-  constructor(
-    private fireDb: AngularFireDatabase,
-    private afAuth: AngularFireAuth
-  ) {
-    this.afAuth.authState.subscribe(auth => {
-      if (auth !== undefined && auth !== null) {
-        this.user = auth;
-      }
-    });
-  }
 
-  getMessage(): AngularFireList<ChatMessage[]> {
-    return this.fireDb.list('/messages');
-  }
+  constructor( http: Http) {
+super('https://jsonplaceholder.typicode.com/posts', http);
+   }
+
+
+
+
+
+  // constructor(
+  //   private fireDb: AngularFireDatabase,
+  //   private afAuth: AngularFireAuth
+  // ) {
+  //   this.afAuth.authState.subscribe(auth => {
+  //     if (auth !== undefined && auth !== null) {
+  //       this.user = auth;
+  //     }
+  //   });
+  // }
+
+  // getMessage(): AngularFireList<ChatMessage[]> {
+  //   return this.fireDb.list('/messages');
+  // }
 
   // sendMessage(msg: string) {
   //   const timeStamp = this.getTimeStamp();
@@ -41,14 +50,14 @@ export class ChatService {
   //   });
   // }
 
-  getTimeStamp() {
-    const now = new Date();
-    const date =
-      now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDay();
-    const time =
-      now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
-    return date + ' ' + time;
-  }
+  // getTimeStamp() {
+  //   const now = new Date();
+  //   const date =
+  //     now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDay();
+  //   const time =
+  //     now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+  //   return date + ' ' + time;
+  // }
 }
 
 

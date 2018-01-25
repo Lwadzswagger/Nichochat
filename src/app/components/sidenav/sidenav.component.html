@@ -1,44 +1,4 @@
-<!-- <div class="container-fluid">
-    <div class="row" style="background-color:#ebf2f2;">
-      <div style="background-color: #00A8B6;" id="appTitle" class="col-md-2 ">
-        <strong>User list </strong>
-        <div class="myFriends" >
-          <ul style="list-style-type: none; color: #fff;">
-            <li *ngFor="let friend of friends" style="color:#fff; ">
-  <a href="" class="pop">    {{friend.name}} {{friend.surname}}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <ul class="nav nav-tabs nav-len">
-          <li class="nav-item" routerLinkActive="active current">
-            <a class="nav-link " [routerLink]="['inbox']">
-              <span class="glyphicon glyphicon-inbox"></span> Inbox
-              <span class="badge badge-primary">10</span>
-            </a>
-          </li>
-          <li class="nav-item" routerLinkActive="active current">
-            <a class="nav-link " [routerLink]="['chatroom']">
-              <span class="fa fa-comments"></span>Chat room
-              <span class="label label-success">54</span>
-            </a>
-          </li>
-          <li class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" [routerLink]="['stage']">
-              <span class="fa fa-eye-slash  "></span> Stage
-              <span type="badge" class="label label-danger">145</span>
-            </a>
-          </li>
-        </ul>
-        <router-outlet>
-        </router-outlet>
-      </div>
-      <div style="background-color: #00A8B6;" id="appTitle" class="col-md-2 ">
-        <strong>Possible user profile list </strong>
-      </div>
-    </div>
-  </div> -->
+
 <div id="sidenav-toggler" data-children=".item" class="">
   <div class="item">
 <button  class="btn-pil" data-toggle="collapse" data-parent="#sidenav-toggler" href="#inbox" aria-expanded="false" aria-controls="inbox">
@@ -46,9 +6,9 @@
  </button>
     <div id="inbox" class="collapse " role="tabpanel">
       <p class="mb-3 makeWhite">
-        This is a list of all your inbox messages from your friends etc Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Fugit incidunt aliquam culpa sit aut quas fugiat deserunt. Atque, perspiciatis culpa? Saepe, atque laudantium doloribus
-        natus quam mollitia quos accusantium excepturi?
+          <li *ngFor="let box of inbox let i = index" (click)="forInbox = true;">
+              {{box.name}} {{box.surname}} <span class="badge badge-warning">{{box.badge}}</span>
+            </li>
       </p>
     </div>
   </div>
@@ -59,9 +19,9 @@
       </button>
     <div id="groups" class="collapse " role="tabpanel">
       <p class="mb-3 makeWhite">
-        This is a list of all your inbox messages from your friends etc Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Fugit incidunt aliquam culpa sit aut quas fugiat deserunt. Atque, perspiciatis culpa? Saepe, atque laudantium doloribus
-        natus quam mollitia quos accusantium excepturi?
+          <li *ngFor="let g of groups" (click)="forInbox = false;">
+              {{g.name}}
+            </li>
       </p>
     </div>
   </div>
@@ -71,10 +31,11 @@
   <i class="fa fa-user fa-1x whitie" aria-hidden="true"></i>   Friends
  </button>
     <div id="friends" class="collapse" role="tabpanel">
-      <ul class="mb-3  makeWhite">
-        <li *ngFor="let friend of friends">
-          {{friend.name}} {{friend.surname}}
-        </li>
+      <ul class="mb-3  makeWhite" *ngFor="let friend of friends">
+             <!-- {{friend.name}} {{friend.surname}} -->
+              <li *ngFor="let eCop of friends">
+                  {{friend.name}} {{eCop.surname}}
+                </li>
       </ul>
     </div>
   </div>

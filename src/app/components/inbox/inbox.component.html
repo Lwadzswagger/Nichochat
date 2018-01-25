@@ -1,4 +1,4 @@
- <div class="alert alert-info">
+<!-- <div class="alert alert-info">
     <a href="/#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       These are you private message in <strong>Nichochat</strong>
   </div>
@@ -14,4 +14,80 @@
     <button class="dropdown-item" type="button">Another action</button>
     <button class="dropdown-item" type="button">Something else here</button>
   </div>
+</div> -->
+<div class="scrollbar" id="style-2">
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate voluptates quia itaque
+  fuga praesentium impedit facilis voluptatem ratione ab officia, repellat architecto vitae dolores eveniet modi aliquid
+  corporis repudiandae dolorum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi temporibus harum quae placeat
+  blanditiis id, delectus, nobis repellat soluta iste fuga iusto, illum ipsam similique at earum beatae minus. Nostrum! Lorem
+  ipsum dolor sit amet consectetur adipisicing elit. Itaque error ipsum doloremque consequatur iusto beatae commodi, aliquam
+  maiores tenetur, quae quia ill um dolorum quam voluptas saepe porro? Nostrum, cupiditate recusandae.
+  <div class="force-overflow">
+
+  </div>
 </div>
+
+
+
+<!-- <div *ngIf="forInbox "> -->
+  <div class="details-container" *ngFor="let chat of  feed | async   let i = index">
+    <mat-card [ngClass]="forInbox ? 'inbox-card' : 'group-card'">
+      <mat-card-header>
+        <h2>sent by</h2>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{chat.body}}</p>
+      </mat-card-content>
+      <mat-card-footer>
+        <label for="">
+          <i class="fa-clock-o" aria-hidden="true"></i>
+        </label>
+      </mat-card-footer>
+      <!-- <mat-card-actions>
+          <div class="row">
+              <button mat-button class=""> <i class="fa fa-paperclip" aria-hidden="true"></i></button>
+              <button mat-button class="" (click)="editMsg(message)"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> send</button>
+          </div>
+        </mat-card-actions> -->
+    </mat-card>
+  </div>
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>     <strong>
+                  <h1>{{chat}}</h1>
+                </strong> -->
+
+<!-- <div *ngIf="isEditing; then showEdit else showMsg"> -->
+<!-- (editId == i) && -->
+<!-- <ng-template #showMsg> -->
+<!-- </ng-template> -->
+<!-- <ng-template #showEdit> -->
+<!-- <input type="text" value="{{chat.body}}" (keyup.enter)="updateChatroom(chat.body) "> -->
+<!-- </ng-template> -->
+<!-- </div> -->
+
+<!-- <p> By:
+                  <a href="#" class="ico pop">{{chat.id}}</a>
+                </p>
+            </div>-->

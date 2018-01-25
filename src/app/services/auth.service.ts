@@ -7,8 +7,8 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
-  public user$: Observable<firebase.User>;
   private userDetails: firebase.User = null;
+  public user$: Observable<firebase.User>;
 
   constructor(public afAuth: AngularFireAuth, public router: Router, private route: ActivatedRoute) {
     this.user$ = afAuth.authState;
@@ -22,6 +22,7 @@ export class AuthService {
       localStorage.setItem('returnUrl', returnUrl);
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     //  this.router.navigate(['/chats']);
+console.log(firebase.auth().currentUser);
   }
 
   loginWithFacebook() {

@@ -1,51 +1,69 @@
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+
+
+<nav class="navbar navbar-inverse greenie">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle greenie" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!-- <button>
-        <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-      </button> -->
-      <ng-template #anonymousUser>
-        <li>
-          <p class="navbar-text" routerLink="login">
-            <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i> Login</p>
-        </li>
-      </ng-template>
-      <a class="navbar-brand" href="#" *ngIf="authService.user$ | async as user;">{{user.displayName}} </a>
+      <a class="navbar-brand " href="#" > Chat App</a>
+      <a class="navbar-brand greenie" href="#" *ngIf="authService.user$ | async as user;">{{user.displayName}} </a>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-item navbar-right"  *ngIf="authService.user$ | async as user; else anonymousUser">
+    <div class="collapse navbar-collapse" id="myNavbar">
 
-        <li class="nav-item" >
-          <p class="navbar-link" (click)="walkout()"> Sign out</p>
+
+<div *ngIf="authService.user$ | async as user; else anonymousUser">
+
+    <form class="navbar-form  navbar-item  navbar-left" >
+        <div class="input-group ">
+          <input type="text" class="form-control search-input" placeholder="Search" name="search">
+          <div class="input-group-btn search-input-outer">
+            <button class="btn btn-default" >
+              <i class="glyphicon glyphicon-search ico-light "></i>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <ul class="nav navbar-nav navbar-item navbar-right" >
+    <div class="dropdown drop">
+      <div class=" dropdown-toggle" type="button" data-toggle="dropdown">
+        <i class="fa fa-ellipsis-v fa-3x" aria-hidden="true"></i>
+        <!-- <span class="caret"></span> -->
+      </div>
+      <ul class="dropdown-menu drop-menu">
+        <li class="nav-item">
+          <p class="navbar-link " (click)="walkout()"> Sign out</p>
         </li>
-
-        <li class="nav-item"  >
+        <li class="nav-item">
           <p class="navbar-link " routerLink="chats">
-            <i class="fa fa-comments-o fa-2x" aria-hidden="true"></i> Chats</p>
+            <i class="fa fa-comments-o fa-2x ico-dark" aria-hidden="true"></i> Chats</p>
         </li>
-
-        <li class="nav-item" >
+        <li class="nav-item">
           <p class="navbar-link" routerLink="profile">
-            <i class="fa fa-user-md fa-2x" aria-hidden="true"></i> Profile</p>
+            <i class="fa fa-user-md fa-2x ico-dark" aria-hidden="true"></i> Profile</p>
         </li>
-
-        <!-- <li class="nav-item">
-          <p class="navbar-link" routerLink="signup">
-            <i class="fa fa-user-plus " aria-hidden="true"></i> Sign up</p>
-        </li> -->
-
       </ul>
     </div>
-    <!-- /.navbar-collapse -->
+  </ul>
 
+</div>
+
+
+
+
+
+      <ng-template #anonymousUser>
+          <ul class="nav navbar-nav navbar-item navbar-right">
+            <li>
+              <p class="navbar-text" routerLink="login">
+                <i class="fa fa-sign-in fa-2kx" aria-hidden="true"></i> Login</p>
+            </li>
+          </ul>
+        </ng-template>
+
+    </div>
   </div>
-  <!-- /.container-fluid -->
 </nav>
