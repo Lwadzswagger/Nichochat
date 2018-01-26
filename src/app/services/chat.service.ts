@@ -6,6 +6,7 @@ import { User } from '../model/user.model';
 import { ChatMessage } from '../model/chat-message.model';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { ToasterComponent } from '../components/toaster/toaster.component';
 
 @Injectable()
 export class ChatService  extends DataService {
@@ -15,11 +16,11 @@ export class ChatService  extends DataService {
   userName: Observable<string>;
 
 
-  constructor( http: Http) {
+  constructor( http: Http , public toaster: ToasterComponent ) {
 super('https://jsonplaceholder.typicode.com/posts', http);
    }
 
-
+// toaster.flag = true;
 
 
 
@@ -56,8 +57,10 @@ super('https://jsonplaceholder.typicode.com/posts', http);
   //     now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDay();
   //   const time =
   //     now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
-  //   return date + ' ' + time;
+    //   return date + ' ' + time;
   // }
+
+
 }
 
 
