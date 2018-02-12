@@ -30,9 +30,9 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { InputFormComponent } from './components/input-form/input-form.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import { ToasterComponent } from './components/toaster/toaster.component';
 // import { MaterialModule } from './material.module';
 // import {MaterialModule}
+  
 export const	firbaseConfig = {
   	// tslint:disable-next-line:indent
   	apiKey: 'AIzaSyDNFUTx--HVAKN_SCGQcJmTj52pJDT48RE',
@@ -59,7 +59,6 @@ export const	firbaseConfig = {
     NavbarComponent,
     SidenavComponent,
     InputFormComponent,
-    ToasterComponent,
     // ScrollableDirective
     // MessComponent,
     // MESSAGES

@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-     canActivate: [AuthGuard]
+    //  canActivate: [AuthGuard]
     },
   {
      path: 'chats',
@@ -47,7 +47,7 @@ const routes: Routes = [
       }
     ]
 
-}
+},
   // { path: '**', component: NotFoundComponent  },
   // {
   //   path: '',

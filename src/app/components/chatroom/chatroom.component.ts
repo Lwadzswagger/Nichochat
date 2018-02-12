@@ -23,9 +23,10 @@ export class ChatroomComponent   {
 isEditing= false;
 
   // chatrooms: any[];
-  feed: AngularFireList<ChatMessage[]>;
+  // feed: AngularFireList<ChatMessage[]>;
   constructor(private chatservice: ChatService) {
-// this.chatservice.getMessage();
+
+this.chatservice.getTimeStamp();
   }
 
   // ngOnInit(): void {

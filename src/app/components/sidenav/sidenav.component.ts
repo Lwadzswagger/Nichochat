@@ -66,15 +66,23 @@ export class SidenavComponent implements OnInit {
   ];
 
   groups = [
-    {name: 'Think Rise'},
-    {name: 'Aliens'},
-    {name: 'CapaCiTi'},
-    {name: 'Lending'},
-    {name: 'AHN'},
-    {name: 'Carrot'}
+    this.eCop,
+    this.inbox,
+    this.friends
+
+    // {name: 'Think Rise'},
+    // {name: 'Aliens'},
+    // {name: 'CapaCiTi'},
+    // {name: 'Lending'},
+    // {name: 'AHN'},
+    // {name: 'Carrot'},
+
   ];
 
- constructor() { }
+ constructor() {
+   console.log('it yeild blanks: ',  this.groups);
+
+ }
 
   ngOnInit() {
   }

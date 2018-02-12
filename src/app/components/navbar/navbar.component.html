@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-inverse greenie">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -8,61 +6,61 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand " href="#" > Chat App</a>
+      <a class="navbar-brand " href="#"> Chat App</a>
       <a class="navbar-brand greenie" href="#" *ngIf="authService.user$ | async as user;">{{user.displayName}} </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 
 
-<div *ngIf="authService.user$ | async as user; else anonymousUser">
+      <div *ngIf="authService.user$ | async as user; else anonymousUser">
 
-    <form class="navbar-form  navbar-item  navbar-left" >
-        <div class="input-group ">
-          <input type="text" class="form-control search-input" placeholder="Search" name="search">
-          <div class="input-group-btn search-input-outer">
-            <button class="btn btn-default" >
-              <i class="glyphicon glyphicon-search ico-light "></i>
-            </button>
+        <form class="navbar-form  navbar-item  navbar-left">
+          <div class="input-group ">
+            <input type="text" class="form-control search-input" placeholder="Search" name="search">
+            <div class="input-group-btn search-input-outer">
+              <button class="btn btn-default">
+                <i class="glyphicon glyphicon-search ico-light "></i>
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
 
-      <ul class="nav navbar-nav navbar-item navbar-right" >
-    <div class="dropdown drop">
-      <div class=" dropdown-toggle" type="button" data-toggle="dropdown">
-        <i class="fa fa-ellipsis-v fa-3x" aria-hidden="true"></i>
-        <!-- <span class="caret"></span> -->
+        <ul class="nav navbar-nav navbar-item navbar-right">
+          <div class="dropdown drop">
+            <div class=" dropdown-toggle" type="button" data-toggle="dropdown">
+              <i class="fa fa-ellipsis-v fa-3x" aria-hidden="true"></i>
+              <!-- <span class="caret"></span> -->
+            </div>
+            <ul class="dropdown-menu drop-menu">
+              <li class="nav-item">
+                <p class="navbar-link " (click)="walkout()"> Sign out</p>
+              </li>
+              <li class="nav-item">
+                <p class="navbar-link " routerLink="chats">
+                  <i class="fa fa-comments-o fa-2x ico-dark" aria-hidden="true"></i> Chats</p>
+              </li>
+              <li class="nav-item">
+                <p class="navbar-link" routerLink="profile">
+                  <i class="fa fa-user-md fa-2x ico-dark" aria-hidden="true"></i> Profile</p>
+              </li>
+            </ul>
+          </div>
+        </ul>
+
       </div>
-      <ul class="dropdown-menu drop-menu">
-        <li class="nav-item">
-          <p class="navbar-link " (click)="walkout()"> Sign out</p>
-        </li>
-        <li class="nav-item">
-          <p class="navbar-link " routerLink="chats">
-            <i class="fa fa-comments-o fa-2x ico-dark" aria-hidden="true"></i> Chats</p>
-        </li>
-        <li class="nav-item">
-          <p class="navbar-link" routerLink="profile">
-            <i class="fa fa-user-md fa-2x ico-dark" aria-hidden="true"></i> Profile</p>
-        </li>
-      </ul>
-    </div>
-  </ul>
-
-</div>
 
 
 
 
 
       <ng-template #anonymousUser>
-          <ul class="nav navbar-nav navbar-item navbar-right">
-            <li>
-              <p class="navbar-text" routerLink="login">
-                <i class="fa fa-sign-in fa-2kx" aria-hidden="true"></i> Login</p>
-            </li>
-          </ul>
-        </ng-template>
+        <ul class="nav navbar-nav navbar-item navbar-right">
+          <li>
+            <p class="navbar-text " routerLink="login">
+              <i class="fa fa-sign-in fa-2kx" aria-hidden="true"></i> Login</p>
+          </li>
+        </ul>
+      </ng-template>
 
     </div>
   </div>

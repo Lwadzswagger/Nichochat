@@ -3,6 +3,32 @@
 font-size:87px;
 text-transform:capitalize;
 } */
+.Mine{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: cadetblue;
+  margin-left: 5px;
+  max-width: 80%;
+  padding-left: 12px;
+  border-radius: 10px;
+  border-left:4px solid #03033d;
+  /* border-left:4px solid  #0b9c62; */
+
+}
+
+.notMine{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #77777759;
+  margin-left: 196px;
+  border-right:4px solid #03033d ;
+  max-width: 80%;
+  padding-left: 12px;
+  border-radius: 10px;
+}
+.card-content{
+  /* padding-top: 4px; */
+
+}
+
 
 
 .inbox-card {
@@ -10,7 +36,6 @@ text-transform:capitalize;
   width: 100%;
   /* height: 150px; */
   background-color:#cacad8;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .group-card{
@@ -32,41 +57,40 @@ text-transform:capitalize;
 
 #style-2::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
 	border-radius: 10px;
-	background-color: #F5F5F5;
+  background-color: #0b9c62;
+  /* border: #0b9c62; */
 }
 
 #style-2::-webkit-scrollbar
 {
-	width: 12px;
-	background-color: #F5F5F5;
+	width: 2px;
+	background-color: #0b9c62;
 }
 
 #style-2::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #D62929;
+	background-color: #03033d;
 }
 
 
 .scrollbar
 {
-	margin-left: 30px;
+	margin-left:-14px;
 	float: left;
-	height: 300px;
+	height: 480px;
 	width: 100%;
-  /* background: #F5F5F5; */
-  background-color:transparent;
+  background: #F5F5F5;
+  /* background-color:transparent; */
 	overflow-y: scroll;
 	margin-bottom: 25px;
 }
 
-.force-overflow
-{
-	min-height: 100%;
-	/* min-height: 450px; */
+.force-overflow{
+	/* min-height: 100%; */
 }
 
 
