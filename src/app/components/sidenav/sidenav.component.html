@@ -4,7 +4,7 @@
 <button  class="btn-pil" data-toggle="collapse" data-parent="#sidenav-toggler" href="#inbox" aria-expanded="false" aria-controls="inbox">
   <i class="fa fa-envelope fa-1x whitie" aria-hidden="true"></i> Inbox
  </button>
-    <div id="inbox" class="show" role="tabpanel">
+    <div id="inbox" class="collapse" role="tabpanel">
       <p class="mb-3 makeWhite">
           <li *ngFor="let box of inbox let i = index" (click)="forInbox = true;">
               {{box.name}} {{box.surname}} <span class="badge badge-warning">{{box.badge}}</span>
@@ -20,7 +20,7 @@
     <div id="groups" class="show " role="tabpanel">
       <p class="mb-3 makeWhite">
           <li *ngFor="let g of groups" (click)="forInbox = false;">
-              {{g.name}}
+              <!-- {{g.name}} -->
             </li>
       </p>
     </div>

@@ -23,12 +23,26 @@ color:#0b9c62;
 }
 .drop:hover{
 color:#fff;
-} 
+/* background-color: #03033d */
+}
 .drop-menu{
 color:#0b9c62;
+padding: 4px;
 background-color:#fff;
-opacity: 0.6;
+/* opacity: 0.6; */
 }
 .ico-dark{
   color:#03033d
+}
+.line:hover{
+  background-color: #0b9c62;
+  color: #03033d;
+}
+.photo{
+height: 50px !important;
+width: 50px;
+border: 3px dashed #0b9c62;
+border-radius: 50px;
+margin-top: -15px;
+
 }

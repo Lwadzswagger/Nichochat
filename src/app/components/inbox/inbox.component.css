@@ -3,6 +3,10 @@
 font-size:87px;
 text-transform:capitalize;
 } */
+
+textarea {
+  resize: none;
+}
 .Mine{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: cadetblue;
@@ -14,6 +18,7 @@ text-transform:capitalize;
   /* border-left:4px solid  #0b9c62; */
 
 }
+
 
 .notMine{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

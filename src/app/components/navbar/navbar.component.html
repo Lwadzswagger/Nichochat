@@ -7,7 +7,6 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand " href="#"> Chat App</a>
-      <a class="navbar-brand greenie" href="#" *ngIf="authService.user$ | async as user;">{{user.displayName}} </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 
@@ -25,6 +24,8 @@
           </div>
         </form>
 
+        <a class="navbar-brand greenie" href="#" *ngIf="authService.user$ | async as user;">{{user.displayName}} </a>
+        <div class="navbar-brand "><img class="photo" src='{{this.authService.getcurrentUser().photoURL}}' alt="Photo">  </div>
         <ul class="nav navbar-nav navbar-item navbar-right">
           <div class="dropdown drop">
             <div class=" dropdown-toggle" type="button" data-toggle="dropdown">
@@ -32,19 +33,20 @@
               <!-- <span class="caret"></span> -->
             </div>
             <ul class="dropdown-menu drop-menu">
-              <li class="nav-item">
+              <li class="nav-item line">
                 <p class="navbar-link " (click)="walkout()"> Sign out</p>
               </li>
-              <li class="nav-item">
+              <li class="nav-item line">
                 <p class="navbar-link " routerLink="chats">
                   <i class="fa fa-comments-o fa-2x ico-dark" aria-hidden="true"></i> Chats</p>
               </li>
-              <li class="nav-item">
+              <li class="nav-item line">
                 <p class="navbar-link" routerLink="profile">
                   <i class="fa fa-user-md fa-2x ico-dark" aria-hidden="true"></i> Profile</p>
               </li>
             </ul>
           </div>
+
         </ul>
 
       </div>

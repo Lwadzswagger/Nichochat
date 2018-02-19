@@ -1,6 +1,5 @@
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Injectable, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { DataService } from './data.service';
 import { User } from '../model/user.model';
 import { ChatMessage } from '../model/chat-message.model';
@@ -8,30 +7,26 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
-export class ChatService  extends DataService {
+export class ChatService  {
   user: any;
   chatMessages: AngularFireList<any[]>;
   chatMessage: ChatMessage;
   userName: Observable<string>;
 
 
-  constructor( http: Http  ) {
-super('https://jsonplaceholder.typicode.com/posts', http);
-   }
 
 
 
-
-  // constructor(
-  //   private fireDb: AngularFireDatabase,
-  //   private afAuth: AngularFireAuth
-  // ) {
-  //   this.afAuth.authState.subscribe(auth => {
-  //     if (auth !== undefined && auth !== null) {
-  //       this.user = auth;
-  //     }
-  //   });
-  // }
+  constructor(
+    private fireDb: AngularFireDatabase,
+    private afAuth: AngularFireAuth
+  ) {
+    this.afAuth.authState.subscribe(auth => {
+      if (auth !== undefined && auth !== null) {
+        this.user = auth;
+      }
+    });
+  }
 
   // getMessage(): AngularFireList<ChatMessage[]> {
   //   return this.fireDb.list('/messages');

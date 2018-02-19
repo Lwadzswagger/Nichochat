@@ -80,7 +80,7 @@ export class SidenavComponent implements OnInit {
   ];
 
  constructor() {
-   console.log('it yeild blanks: ',  this.groups);
+   console.log('it yeild blanks: ',  this.groups[0][this.groups.length]);
 
  }
 
