@@ -17,8 +17,14 @@ const routes: Routes = [
 
   { path: '', redirectTo: 'home ', pathMatch: 'full'  },
 
-  { path: 'login', component: LoginComponent  },
-  { path: 'signup', component: SignupComponent },
+  {
+     path: 'login',
+      component: LoginComponent
+  },
+  {
+    path: 'signup',
+     component: SignupComponent
+    },
   {
     path: 'home',
     component: HomeComponent,
@@ -27,25 +33,25 @@ const routes: Routes = [
   {
      path: 'chats',
      component: ChatsComponent,
-      canActivate: [AuthGuard],
+    //  canActivate: [AuthGuard],
 
-    children: [
-      {
-         path: 'inbox',
-         component: InboxComponent,
-         canActivate: [AuthGuard]
-         },
-      {
-         path: 'chatroom',
-         component: ChatroomComponent,
-         canActivate: [AuthGuard]
-        },
-      {
-        path: 'stage',
-        component: StageComponent ,
-        canActivate: [AuthGuard]
-      }
-    ]
+    // children: [
+    //   {
+    //      path: 'inbox',
+    //      component: InboxComponent,
+    //      canActivate: [AuthGuard]
+    //      },
+    //   {
+    //      path: 'chatroom',
+    //      component: ChatroomComponent,
+    //      canActivate: [AuthGuard]
+    //     },
+    //   {
+    //     path: 'stage',
+    //     component: StageComponent ,
+    //     canActivate: [AuthGuard]
+    //   }
+    // ]
 
 },
   // { path: '**', component: NotFoundComponent  },

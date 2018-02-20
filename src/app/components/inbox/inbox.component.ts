@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
+import { ChatMessage } from '../../model/chat-message.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-inbox',
@@ -11,19 +13,28 @@ export class InboxComponent implements OnInit {
 @Input('msg') mess: any [];
 
   forInbox: boolean;
-  feed: any [];
-   public static isDisplayInbox() {return true;  }
-  constructor(private cservice: ChatService) {
+  feeds: ChatMessage[];
 
-// this.cservice.getAll()
-// .subscribe(
-//   Response => {
-// this.feed = Response.json();
-//   });
-   }
+  constructor(
+    private cservice: ChatService,
+    public  auth: AuthService,
+  ) {
+this.cservice.getMessage()
+.valueChanges()
+.subscribe(
+  Response => {
+this.feeds = Response;
+  });
 
-  ngOnInit() {
+this.cservice.myDirectMessage();
+// console.log('just to prove a point');
+
+}
+
+ngOnInit() {
+  // this.cservice.myDirectMessage();
   // this.forInbox = true;
+
   }
 
 

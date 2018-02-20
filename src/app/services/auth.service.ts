@@ -90,10 +90,7 @@ export class AuthService {
   }
 ];
 
-    this.afs
-      .collection('user')
-      .doc('' + this.getcurrentUser().uid)
-      .set(Object.assign({},  newuser))
+    this.afs.collection('user').doc('' + this.getcurrentUser().uid).set(Object.assign({},  newuser))
       .then(success => {
         console.log('success!');
         alert(

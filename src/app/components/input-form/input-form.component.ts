@@ -18,26 +18,7 @@ export class InputFormComponent implements OnInit {
   }
 
   sendMsg(input: HTMLInputElement) {
-const post = {title : input.value};
+this.chatservice.sendMessage(input.value);
 input.value = '';
-
-
-// this.http.post(,JSON.stringify(post))
-// .subscribe(response => {
-// post['id'] = response.json().id;
-// });
-
-    this.chatservice.create(post)
-      .subscribe(response => {
-        post['id'] = response.json().id;
-        this.posts.splice(0, 0, post);
-      },
-      (error: AppError) => {
-        if (error instanceof BadInput) {
-          // code for my validated input
-        // tslint:disable-next-line:curly
-        } else throw error;
-      });
   }
-
 }
