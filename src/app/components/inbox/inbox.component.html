@@ -1,17 +1,55 @@
- <div class="alert alert-info">
-    <a href="/#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      These are you private message in <strong>Nichochat</strong>
-  </div>
-
-
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item" type="button">Action</button>
-    <button class="dropdown-item" type="button">Another action</button>
-    <button class="dropdown-item" type="button">Something else here</button>
+<div class="scrollbar" id="style-2">
+  <div *ngFor="let feed of feeds; let i = index">
+    <div [ngClass]="feed.from === 'this.auth.getcurrentUser().uid' ? 'Mine': 'notMine'">
+      <div class="card-content">
+        <h5>By: {{feed.from }}  </h5>
+        <h5 class="float-right">
+          <i class="fa fa-clock-o" aria-hidden="true"></i> {{feed.timeStamp}}</h5>
+        <hr> {{feed.message}}
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>     <strong>
+                  <h1>{{chat}}</h1>
+                </strong> -->
+
+<!-- <div *ngIf="isEditing; then showEdit else showMsg"> -->
+<!-- (editId == i) && -->
+<!-- <ng-template #showMsg> -->
+<!-- </ng-template> -->
+<!-- <ng-template #showEdit> -->
+<!-- <input type="text" value="{{chat.body}}" (keyup.enter)="updateChatroom(chat.body) "> -->
+<!-- </ng-template> -->
+<!-- </div> -->
+
+<!-- <p> By:
+                  <a href="#" class="ico pop">{{chat.id}}</a>
+                </p>
+            </div>-->

@@ -5,5 +5,4 @@ display?: string;
 profileImg?: string;
 friends?: string[];
 
-
 }

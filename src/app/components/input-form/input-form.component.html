@@ -1,0 +1,40 @@
+<!-- <mat-card class="input-card">
+    <mat-card-content>
+
+<div class="input-group">
+  <i class="input-group-addon">
+    <span class="fa fa-plus"></span>
+  </i>
+<input  type="text"
+ (keyup.enter)="sendMsg(message)"  id="message" name="chat" placeholder="write something here..."
+  class="form-control" #message>
+</div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row input-items">
+          <button mat-button class="attachment"> <i class="fa fa-paperclip" aria-hidden="true"></i></button>
+          <button mat-button class="send" (click)="sendMsg(message)"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> send</button>
+
+</div>
+    </mat-card-actions>
+  </mat-card> -->
+<div class="input-card">
+  <div class="input-group">
+    <i class="input-group-addon">
+      <span class="fa fa-plus"></span>
+    </i>
+    <textarea type="text" (keyup.enter)="sendMsg(message)" id="message" name="chat" placeholder="write something here..." class="form-control"
+      #message></textarea>
+  </div><br>
+  <div class="row input-items">
+
+    <!-- <input class="image-input form-control" (change)="profileUpload($event)" id="profile-picture" type="file"> -->
+
+    <button mat-button class="send" (click)="sendMsg(message)">
+      <i class="fa fa-paper-plane-o" aria-hidden="true"></i> send</button>
+
+    </div>
+
+  </div>
+
+  <!-- <i class="fa fa-paperclip" aria-hidden="true"></i> -->

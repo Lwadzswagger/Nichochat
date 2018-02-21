@@ -1,0 +1,9 @@
+.side-nav{
+    background-color:#03033d;
+height:645px;
+}
+.display{
+/* flex:5; */
+overflow-y:scroll;
+height:500px;
+}

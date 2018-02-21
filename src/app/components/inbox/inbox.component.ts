@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChatService } from '../../services/chat.service';
+import { ChatMessage } from '../../model/chat-message.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-inbox',
@@ -6,10 +9,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inbox.component.css']
 })
 export class InboxComponent implements OnInit {
+// tslint:disable-next-line:no-input-rename
+@Input('msg') mess: any [];
 
-  constructor() { }
+  forInbox: boolean;
+  feeds: ChatMessage[];
 
-  ngOnInit() {
+  constructor(
+    private cservice: ChatService,
+    public  auth: AuthService,
+  ) {
+this.cservice.getMessage()
+.valueChanges()
+.subscribe(
+  Response => {
+this.feeds = Response;
+  });
+
+this.cservice.myDirectMessage();
+// console.log('just to prove a point');
+
+}
+
+ngOnInit() {
+  // this.cservice.myDirectMessage();
+  // this.forInbox = true;
+
   }
+
+
 
 }
