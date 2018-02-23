@@ -13,20 +13,22 @@ export class InboxComponent implements OnInit {
 @Input('msg') mess: any [];
 
   forInbox: boolean;
-  feeds: ChatMessage[];
+  feeds: any;
 
   constructor(
     private cservice: ChatService,
     public  auth: AuthService,
   ) {
-this.cservice.getMessage()
-.valueChanges()
-.subscribe(
-  Response => {
-this.feeds = Response;
-  });
+    this.feeds = this.cservice.myDirectMessage();
 
-this.cservice.myDirectMessage();
+
+// .valueChanges()
+// .subscribe(
+//   Response => {
+// = Response;
+//   });
+
+// this.cservice.myDirectMessage();
 // console.log('just to prove a point');
 
 }

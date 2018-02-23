@@ -2,11 +2,12 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Injectable, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 import { User } from '../model/user.model';
-import {ChatMessage} from '../model/chat-message.model';
+import { ChatMessage } from '../model/chat-message.model';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AuthService } from './auth.service';
+import { Response } from '@angular/http/src/static_response';
 
 @Injectable()
 export class ChatService {
@@ -15,6 +16,7 @@ export class ChatService {
   // chatMessages: AngularFireList<any[]>;
   chatMessage: ChatMessage;
   userName: Observable<string>;
+  myDMs: ChatMessage [] ;
 
   personalChatGoups: any = this.afs
     .collection('groupchat');
@@ -33,6 +35,8 @@ export class ChatService {
         this.user = auth;
       }
     });
+
+
   }
 
 
@@ -40,29 +44,31 @@ export class ChatService {
 
 
   myDirectMessage() {
-// for (let i = 0; i < this.personalChatGoups.length; i++) {
-//   if (this.personalChatGoups[i].search(this.auth.getcurrentUser().email) === -1) {
-// console.log('contains', this.personalChatGoups[i]);
-// } else {
-// console.log('DOES NOTcontains', this.personalChatGoups[i]);
-//   }
-// }
-// console.log('onother proof of cons');
 
+    this.getMessage().valueChanges().subscribe(
+      Response => {
+  // let lame = Response;
+  let myArray: any[];
+  for (let i = 0; i < Response.length; i++) {
+    for (let z = 0; z < Response[i].users.length; z++) {
 
-  // this.personalChatGoups.forEach(element => {
-    // if (this.flag) {
-        for (let i = 0; i < this.personalChatGoups.length; i++) {
-            if (this.personalChatGoups[i].users.search(this.auth.getcurrentUser().email) === -1) {
-              console.log('contains', this.personalChatGoups[i]);
-                   } else {
-              console.log('DOES NOTcontains', this.personalChatGoups[i]);
-                }
-        }
-        console.log('reached end');
+if (Response[i].users[z] === this.auth.getcurrentUser().email) {
+  // tslint:disable-next-line:no-unused-expression
+  myArray = Response[i];
+  // console.log(Response[i]);
+  // console.log(this.myDMs);
 
-    // }
-// });
+} else {
+  // console.log('not mine', Response[i].from);
+}
+
+}}
+
+console.log(myArray);
+return myArray;
+});
+// console.log(this.myDMs.from);
+
   }
 
 
